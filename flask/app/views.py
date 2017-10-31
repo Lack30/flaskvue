@@ -10,8 +10,8 @@ def index():
     return jsonify('Hello, %s' % g.user.username)
 
 
-@app.route('/api/users', methods = ['POST'])
-def new_user():
+@app.route('/api/register', methods = ['POST'])
+def register():
     username = request.json.get('username')
     password = request.json.get('password')
     if username is None or password is None:
