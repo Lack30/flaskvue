@@ -3,7 +3,7 @@
     <Row type="flex" justify="center">
          <Col span="3">
             <h1>{{ msg }}</h1>
-            <!-- <Icon type="load-a" size="50" class="loading"></Icon> -->
+            <Icon type="load-a" size="50" class="loading"></Icon>
         </Col> 
         <Button @click="logout">注销</Button>
     </Row>
@@ -25,12 +25,12 @@ export default {
         }
     },
     created() {
-        this.$axios.get("/").then(response => {
-            this.msg = response.data
-        }).catch(error => {
-            console.log(error)
-            this.$Message.error(error)
-        })
+        // this.$axios.get("/").then(response => {
+        //     this.msg = response.data
+        // }).catch(error => {
+        //     console.log(error)
+        //     this.$Message.error(error)
+        // })
     }
 }
 </script>

@@ -17,12 +17,12 @@ axios.defaults.auth = {
     password: '',
 }
 
-// axios.interceptors.request.use((config) => {
-//     console.log(config)
-//     return config;
-// }, (error) => {
-//     return Promise.reject(error)
-// })
+axios.interceptors.request.use((config) => {
+    console.log(config)
+    return config;
+}, (error) => {
+    return Promise.reject(error)
+})
 
 axios.interceptors.response.use((response) => {
     return response;
@@ -38,6 +38,9 @@ axios.interceptors.response.use((response) => {
 })
 
 router.beforeEach((to, from, next) => {
+    console.log(to)
+    console.log(from)
+    console.log(next)
     if (to.meta.required) {
         if (localStorage.token) {
             store.commit('set_token', localStorage.token)
